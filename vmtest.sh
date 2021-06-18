@@ -117,7 +117,7 @@ if ! command -v swaks > /dev/null 2>&1; then
 else
 	echo "Please enter your email: "
 	read EMAIL
-	swaks --to $EMAIL
+	swaks --to $EMAIL  --header "$HOSTNAME QA report" --attach report.txt
 fi 
 sleep 1
 echo "=========================================================================================="
