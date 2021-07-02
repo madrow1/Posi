@@ -116,7 +116,7 @@ if ! command -v swaks > /dev/null 2>&1; then
 	echo "swaks is not installed on this system" 
 else
 	echo "Please enter your email: "
-	read EMAIL
+	read -n EMAIL
 	swaks --to $EMAIL
 	echo "swaks installed, test email has been sent" >> report.txt
 fi 
