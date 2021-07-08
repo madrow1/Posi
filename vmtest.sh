@@ -7,8 +7,7 @@ sleep 1
 echo "=========================================================================================="
 echo "Check storage" 
 echo "=========================================================================================="
-echo $(awk '{print $2}' <(df -mh /dev/mapper/vgmain-root)) | tee -a report.txt
-echo $(awk '{print $2}' <(df -mh /dev/nvme0n1p5)) | tee -a report.txt
+echo $(awk '{print $2}' <(awk '{print $5}' <(pvs)) | tee -a report.txt
 sleep 1
 echo "=========================================================================================="
 echo "Check CPUs"
